@@ -125,7 +125,7 @@ const HomeComponent = () => {
         </div>
 
         <footer className="pt-3 mt-4 text-muted border-top">
-          &copy; 2023 Justin Kuo
+          &copy; 2026 Justin Kuo
         </footer>
       </div>
     </main>
