@@ -49,12 +49,12 @@ const EnrollComponent = ({ currentUser, setCurrentUser }) => {
         </div>
       )}
 
-      {currentUser && currentUser.user.role == "instructor" && (
+      {currentUser && currentUser.user.role === "instructor" && (
         <div>
           <h1>只有學生才能夠註冊課程</h1>
         </div>
       )}
-      {currentUser && currentUser.user.role == "student" && (
+      {currentUser && currentUser.user.role === "student" && (
         <div className="search input-group mb-3">
           <input
             type="text"
@@ -67,7 +67,7 @@ const EnrollComponent = ({ currentUser, setCurrentUser }) => {
         </div>
       )}
 
-      {currentUser && searchResult && searchResult.length != 0 && (
+      {currentUser && searchResult && searchResult.length !== 0 && (
         <div>
           <p>這是我們從API返回的數據:</p>
           {searchResult.map((course) => {
