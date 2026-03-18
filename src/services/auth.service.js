@@ -1,5 +1,7 @@
 import axios from "axios";
-const API_URL = "https://class-website-api-2.onrender.com/api/user";
+const API_BASE_URL =
+  process.env.REACT_APP_API_BASE_URL || "https://class-website-api-2.onrender.com";
+const API_URL = `${API_BASE_URL}/api/user`;
 
 class AuthService {
   login(email, password) {
