@@ -27,7 +27,7 @@ const EnrollComponent = ({ currentUser, setCurrentUser }) => {
   const handleEnroll = (e) => {
     CourseService.enroll(e.target.id)
       .then(() => {
-        window.alert("課程註冊成功!! 重新導向到課程頁面。");
+        window.alert("課程註冊成功，將為你導向課程頁面。");
         navigate("/course");
       })
       .catch((e) => {
@@ -51,7 +51,7 @@ const EnrollComponent = ({ currentUser, setCurrentUser }) => {
 
       {currentUser && currentUser.user.role === "instructor" && (
         <div>
-          <h1>只有學生才能夠註冊課程</h1>
+          <h1>只有學生可以註冊課程。</h1>
         </div>
       )}
       {currentUser && currentUser.user.role === "student" && (
@@ -69,7 +69,7 @@ const EnrollComponent = ({ currentUser, setCurrentUser }) => {
 
       {currentUser && searchResult && searchResult.length !== 0 && (
         <div>
-          <p>這是我們從API返回的數據:</p>
+          <p>搜尋結果：</p>
           {searchResult.map((course) => {
             return (
               <div key={course._id} className="card" style={{ width: "18rem" }}>
@@ -101,6 +101,10 @@ const EnrollComponent = ({ currentUser, setCurrentUser }) => {
             );
           })}
         </div>
+      )}
+
+      {currentUser && searchResult && searchResult.length === 0 && (
+        <p>查無符合條件的課程，請換個關鍵字再試一次。</p>
       )}
     </div>
   );

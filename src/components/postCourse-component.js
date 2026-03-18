@@ -24,7 +24,7 @@ const PostCourseComponent = (props) => {
   const postCourse = () => {
     CourseService.post(title, description, price)
       .then(() => {
-        window.alert("新課程已創建成功");
+        window.alert("新課程建立成功！");
         navigate("/course");
       })
       .catch((error) => {
@@ -37,12 +37,12 @@ const PostCourseComponent = (props) => {
     <div style={{ padding: "3rem" }}>
       {!currentUser && (
         <div>
-          <p>在發布新課程之前，您必須先登錄。</p>
+          <p>發布新課程前，請先登入。</p>
           <button
             className="btn btn-primary btn-lg"
             onClick={handleTakeToLogin}
           >
-            帶我進入登錄頁面。
+            前往登入頁面
           </button>
         </div>
       )}
@@ -81,7 +81,7 @@ const PostCourseComponent = (props) => {
           />
           <br />
           <button className="btn btn-primary" onClick={postCourse}>
-            交出表單
+            建立課程
           </button>
           <br />
           <br />

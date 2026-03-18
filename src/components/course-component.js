@@ -48,12 +48,12 @@ const CourseComponent = ({ currentUser, setCurrentUser }) => {
       )}
       {currentUser && currentUser.user.role === "instructor" && (
         <div>
-          <h1>歡迎來到講師的課程頁面。</h1>
+          <h1>歡迎來到講師課程管理頁面。</h1>
         </div>
       )}
       {currentUser && currentUser.user.role === "student" && (
         <div>
-          <h1>歡迎來到學生的課程頁面。</h1>
+          <h1>歡迎來到學生課程總覽頁面。</h1>
         </div>
       )}
       {currentUser && courseData && courseData.length !== 0 && (
